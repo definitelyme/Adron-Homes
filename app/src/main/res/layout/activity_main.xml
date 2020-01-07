@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                app:cardCornerRadius="50dp"-->
+            <!--                app:cardElevation="12dp">-->
+
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/main_activity_user_imageView"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:contentDescription="@string/app_name"-->
+            <!--                    android:scaleType="centerCrop"-->
+            <!--                    android:src="@drawable/square" />-->
+            <!--            </androidx.cardview.widget.CardView>-->
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/main_activity_user_imageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/round"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius="200dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="440dp"
+                android:background="@drawable/estate"
+                android:backgroundTint="@color/activity_main_tint"
+                android:backgroundTintMode="src_over"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent=".6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="355dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_activity_layout_round"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guideline1">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/main_activity_guideline_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/activity_start_guide" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/main_activity_guideline_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/activity_start_guide" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/main_activity_string_1_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/main_activity_text_guide" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/main_activity_salesBtn_guideline_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/main_activity_inner_guide" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/main_activity_salesBtn_guideline_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/main_activity_inner_guide" />
+
+                <TextView
+                    android:id="@+id/main_activity_txtView1"
+                    style="@style/MainActivityHeader_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/main_activity_string_1"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="@id/main_activity_string_1_guideline"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/main_activity_sales_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="@id/main_activity_salesBtn_guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/main_activity_salesBtn_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/main_activity_txtView1">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/main_activity_buy_button"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/main_activity_btn_selector"
+                        android:gravity="center"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/main_activity_sell_button"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/main_activity_buy_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/main_activity_ic_buy"
+                            android:orientation="vertical"
+                            android:padding="6dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/main_activity_buy_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/main_activity_buy_string"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/main_activity_buy_image" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/main_activity_sell_button"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/main_activity_btn_selector"
+                        android:gravity="center"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/main_activity_rent_button"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/main_activity_buy_button"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/main_activity_sell_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/main_activity_ic_sell"
+                            android:orientation="vertical"
+                            android:padding="6dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/main_activity_sell_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/main_activity_sell_string"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/main_activity_sell_image" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/main_activity_rent_button"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/main_activity_btn_selector"
+                        android:gravity="center"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/main_activity_sell_button"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/main_activity_rent_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/main_activity_ic_rent"
+                            android:orientation="vertical"
+                            android:padding="6dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/main_activity_rent_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/main_activity_rent_string"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/main_activity_rent_image" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/main_activity_location_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="@id/main_activity_guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/main_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/main_activity_sales_btn">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/main_activity_string_2_guideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="5dp" />
+
+                    <TextView
+                        android:id="@+id/main_activity_txtView2"
+                        style="@style/MainActivityHeader_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/main_activity_where_string"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="@id/main_activity_string_2_guideline"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/main_activity_location_guideline_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="@dimen/main_activity_inner_guide" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/main_activity_location_guideline_end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="@dimen/main_activity_inner_guide" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:hint="@string/main_activity_location_hint"
+                        app:errorEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        app:hintEnabled="true"
+                        app:layout_constraintEnd_toEndOf="@id/main_activity_location_guideline_end"
+                        app:layout_constraintStart_toStartOf="@id/main_activity_location_guideline_start"
+                        app:layout_constraintTop_toBottomOf="@id/main_activity_txtView2">
+
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/main_activity_location_spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:editable="false"
+                            android:freezesText="true"
+                            android:inputType="none" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="@id/main_activity_guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/main_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/main_activity_location_layout">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/main_activity_creator_guideline_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="@dimen/main_activity_inner_guide" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/main_activity_creator_guideline_end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="@dimen/main_activity_inner_guide" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/main_activity_creator_btn"
+                        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:gravity="start|center"
+                        android:text="@string/main_activity_creator_string"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="4dp"
+                        app:icon="@drawable/ic_arrow_right"
+                        app:iconGravity="end"
+                        app:iconSize="25dp"
+                        app:layout_constraintEnd_toEndOf="@id/main_activity_creator_guideline_end"
+                        app:layout_constraintStart_toStartOf="@id/main_activity_creator_guideline_start"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/main_activity_filter_btn"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:gravity="end|center"
+                        android:text="@string/main_activity_options_string"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:icon="@drawable/ic_arrow_right"
+                        app:iconGravity="end"
+                        app:iconSize="18dp"
+                        app:iconTint="@color/black"
+                        app:layout_constraintEnd_toEndOf="@id/main_activity_creator_guideline_end"
+                        app:layout_constraintTop_toBottomOf="@id/main_activity_creator_btn"
+                        app:rippleColor="@color/lightGrey0"
+                        app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.LargeComponent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

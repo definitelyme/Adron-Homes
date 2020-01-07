@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/estate_main"
+    android:backgroundTint="@color/activity_main_tint"
+    android:backgroundTintMode="src_atop"
+    tools:context=".SearchActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/search_activity_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:theme="@style/SearchActivityToolbar" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/search__guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="135dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_activity_layout_round"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/search__guideline1">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/search_activity_guideline_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/activity_start_guide" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/search_activity_guideline_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/activity_start_guide" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/search_activity_guideline_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="30dp" />
+
+                <TextView
+                    android:id="@+id/search_activity_textView1"
+                    style="@style/SearchActivityHeader_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I'm looking for..."
+                    app:layout_constraintStart_toStartOf="@+id/search_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/search_activity_guideline_top" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/search_activity_selected_item_textView"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_activity_rent_string"
+                    android:textColor="@color/black"
+                    app:backgroundTint="@color/lightgrey"
+                    app:layout_constraintBottom_toBottomOf="@+id/search_activity_textView1"
+                    app:layout_constraintEnd_toEndOf="@id/search_activity_guideline_end"
+                    app:layout_constraintTop_toTopOf="@+id/search_activity_textView1" />
+
+                <View
+                    android:id="@+id/search_activity_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintEnd_toEndOf="@id/search_activity_guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/search_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/search_activity_selected_item_textView" />
+
+                <ImageView
+                    android:id="@+id/search_activity_selected_item_imageView"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/midGrey"
+                    android:backgroundTintMode="src_over"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_rent"
+                    app:layout_constraintEnd_toStartOf="@+id/search_activity_textView2"
+                    app:layout_constraintStart_toStartOf="@id/search_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/search_activity_divider" />
+
+                <TextView
+                    android:id="@+id/search_activity_textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fill in the basic information so we match \n you with your perfect place."
+                    app:layout_constraintBottom_toBottomOf="@id/search_activity_selected_item_imageView"
+                    app:layout_constraintEnd_toEndOf="@id/search_activity_guideline_end"
+                    app:layout_constraintStart_toEndOf="@id/search_activity_selected_item_imageView"
+                    app:layout_constraintTop_toTopOf="@id/search_activity_selected_item_imageView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_activity_inner_guide">17dp</dimen>
+    <dimen name="main_activity_salesBtn_guide">12dp</dimen>
+    <dimen name="main_activity_text_guide">20dp</dimen>
+    <dimen name="activity_start_guide">16dp</dimen>
+    <dimen name="activity_end_guide">16dp</dimen>
+</resources>

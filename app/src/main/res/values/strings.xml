@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Adron Homes</string>
+    <string name="main_activity_rent_string">RENT</string>
+    <string name="main_activity_buy_string">BUY</string>
+    <string name="main_activity_sell_string">SELL</string>
+    <string name="main_activity_string_1">I want to</string>
+    <string name="main_activity_location_hint">Lagos, Nigeria</string>
+    <string name="main_activity_where_string">Where?</string>
+    <string name="main_activity_creator_string">Go to Creator</string>
+    <string name="main_activity_options_string">more filter options</string>
+</resources>

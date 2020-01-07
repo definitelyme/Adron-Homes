@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#7fa009</color>
+    <color name="colorPrimaryDark">#37430a</color>
+    <color name="colorAccent">#ff8c00</color>
+    <color name="activity_main_tint">#567FA009</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="midGrey">#AAAAAA</color>
+    <color name="darkGrey">#414040</color>
+    <color name="lightGrey0">#f2f2f2</color>
+    <color name="lightgrey">#eee</color>
+    <color name="lightgrey_trans">#81EEEEEE</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="trans_intending">#0AEEEEEE</color>
+</resources>
