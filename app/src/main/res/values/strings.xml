@@ -8,4 +8,22 @@
     <string name="main_activity_where_string">Where?</string>
     <string name="main_activity_creator_string">Go to Creator</string>
     <string name="main_activity_options_string">more filter options</string>
+    <string name="filter_activity_longString1">Fill in the basic information so we match\nyou with your perfect place.</string>
+    <string name="filter_activity_flat_string">Flat</string>
+    <string name="filter_activity_room_string">Room</string>
+    <string name="filter_activity_house_string">House</string>
+    <string name="filter_activity_max_hint">Max</string>
+    <string name="filter_activity_min_hint">Min</string>
+    <string name="filter_activity_keyword_string">what best describes your choice..</string>
+    <string name="filter_activity_price_range_textView">Price Range</string>
+    <string name="filter_activity_property_type_textView">Property Type</string>
+    <string name="filter_activity_rooms_textView">Rooms</string>
+    <string name="filter_activity_keyword_textView">Keyword</string>
+    <string name="filter_activity_chip_1">1</string>
+    <string name="filter_activity_chip_2">2</string>
+    <string name="filter_activity_chip_3">3</string>
+    <string name="filter_activity_chip_4">4</string>
+    <string name="filter_activity_chip_5">5</string>
+    <string name="filter_activity_chip_6_plus">6 +</string>
+    <string name="filter_activity_textView1_string">I\'m looking for...</string>
 </resources>

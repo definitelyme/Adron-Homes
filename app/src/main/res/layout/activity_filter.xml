@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/estate_main"
+    android:backgroundTint="@color/activity_main_tint"
+    android:backgroundTintMode="src_atop"
+    tools:context=".FilterActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/filter_activity_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:theme="@style/TransparentToolbar" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/filter__guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="125dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/main_activity_layout_round"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/filter__guideline1">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/filter_activity_guideline_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/activity_start_guide" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/filter_activity_guideline_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/activity_start_guide" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/filter_activity_guideline_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="30dp" />
+
+                <TextView
+                    android:id="@+id/filter_activity_textView1"
+                    style="@style/FilterActivityHeader_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filter_activity_textView1_string"
+                    app:layout_constraintStart_toStartOf="@+id/filter_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/filter_activity_guideline_top" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/filter_activity_selected_item_textView"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_activity_rent_string"
+                    android:textColor="@color/black"
+                    app:backgroundTint="@color/lightgrey"
+                    app:layout_constraintBottom_toBottomOf="@+id/filter_activity_textView1"
+                    app:layout_constraintEnd_toEndOf="@id/filter_activity_guideline_end"
+                    app:layout_constraintTop_toTopOf="@+id/filter_activity_textView1" />
+
+                <View
+                    android:id="@+id/filter_activity_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintEnd_toEndOf="@id/filter_activity_guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/filter_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/filter_activity_selected_item_textView" />
+
+                <RelativeLayout
+                    android:id="@+id/filter_activity_selected_item_imageView_layout"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/filter_activity_selected_image_bg"
+                    app:layout_constraintStart_toEndOf="@id/filter_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/filter_activity_divider">
+
+                    <ImageView
+                        android:id="@+id/filter_activity_selected_item_imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_rent"
+                        android:tint="@color/colorPrimary" />
+                </RelativeLayout>
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/filter_activity_textView2_barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="filter_activity_selected_item_imageView_layout" />
+
+                <LinearLayout
+                    android:id="@+id/filter_activity_textView2_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="@id/filter_activity_selected_item_imageView_layout"
+                    app:layout_constraintEnd_toEndOf="@id/filter_activity_selected_item_textView"
+                    app:layout_constraintStart_toEndOf="@id/filter_activity_textView2_barrier"
+                    app:layout_constraintTop_toTopOf="@id/filter_activity_selected_item_imageView_layout">
+
+                    <TextView
+                        android:id="@+id/filter_activity_textView2"
+                        style="@style/FilterActivityText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:autoSizeTextType="uniform"
+                        android:text="@string/filter_activity_longString1" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/guide_below_selected_item_imageView_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="filter_activity_selected_item_imageView_layout,filter_activity_textView2_layout" />
+
+                <TextView
+                    android:id="@+id/filter_activity__type_textView"
+                    style="@style/FilterActivityOptionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/filter_activity_property_type_textView"
+                    app:layout_constraintStart_toStartOf="@id/filter_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/guide_below_selected_item_imageView_layout" />
+
+                <RadioGroup
+                    android:id="@+id/filter_activity_radio_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@id/filter_activity_guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/filter_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/filter_activity__type_textView">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/filter_activity_radio_flat"
+                        style="@style/FilterActivityRadioButtonStyle"
+                        android:layout_height="wrap_content"
+                        android:text="@string/filter_activity_flat_string"
+                        app:useMaterialThemeColors="false" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/filter_activity_radio_room"
+                        style="@style/FilterActivityRadioButtonStyle"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="@string/filter_activity_room_string"
+                        app:useMaterialThemeColors="false" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/filter_activity_radio_house"
+                        style="@style/FilterActivityRadioButtonStyle"
+                        android:layout_height="wrap_content"
+                        android:text="@string/filter_activity_house_string"
+                        app:useMaterialThemeColors="false" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/filter_activity__rooms_textView"
+                    style="@style/FilterActivityOptionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/filter_activity_rooms_textView"
+                    app:layout_constraintStart_toStartOf="@id/filter_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/filter_activity_radio_group" />
+
+                <HorizontalScrollView
+                    android:id="@+id/filter_activity_chip_scrollView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:scrollIndicators="end"
+                    android:scrollbars="none"
+                    app:layout_constraintEnd_toEndOf="@id/filter_activity_guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/filter_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/filter_activity__rooms_textView">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/filter_activity_chip_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipSpacingVertical="20dp"
+                        app:singleLine="true"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterActivityChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/filter_activity_chip_1" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterActivityChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/filter_activity_chip_2" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterActivityChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/filter_activity_chip_3" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterActivityChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/filter_activity_chip_4" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterActivityChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/filter_activity_chip_5" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterActivityChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/filter_activity_chip_6_plus" />
+                    </com.google.android.material.chip.ChipGroup>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/filter_activity__price_textView"
+                    style="@style/FilterActivityOptionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/filter_activity_price_range_textView"
+                    app:layout_constraintStart_toStartOf="@id/filter_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/filter_activity_chip_scrollView"
+                    tools:layout_editor_absoluteY="289dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filter_activity_min_price_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="5dp"
+                    android:hint="@string/filter_activity_min_hint"
+                    app:errorEnabled="true"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    app:layout_constraintEnd_toStartOf="@+id/filter_activity_max_price_layout"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@id/filter_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/filter_activity__price_textView">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/filter_activity_min_price_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:freezesText="true"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filter_activity_max_price_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:hint="@string/filter_activity_max_hint"
+                    app:errorEnabled="true"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    app:layout_constraintBottom_toBottomOf="@id/filter_activity_min_price_layout"
+                    app:layout_constraintEnd_toEndOf="@id/filter_activity_guideline_end"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/filter_activity_min_price_layout"
+                    app:layout_constraintTop_toTopOf="@id/filter_activity_min_price_layout">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/filter_activity_max_price_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:freezesText="true"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/filter_activity__keyword_textView"
+                    style="@style/FilterActivityOptionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/filter_activity_keyword_textView"
+                    app:layout_constraintStart_toStartOf="@id/filter_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/filter_activity_min_price_layout" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filter_activity__keyword_inputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/filter_activity_keyword_string"
+                    app:errorEnabled="true"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    app:layout_constraintEnd_toEndOf="@id/filter_activity_guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/filter_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/filter_activity__keyword_textView">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/filter_activity__keyword_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textAutoCorrect|textFilter"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/filter_activity_continue_btn"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Continue"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:layout_constraintEnd_toEndOf="@id/filter_activity_guideline_end"
+                    app:layout_constraintTop_toBottomOf="@id/filter_activity__keyword_inputLayout" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AutoCompleteTextView;
-import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -40,14 +39,18 @@ public class MainActivity extends AppCompatActivity {
         locationSpinner = findViewById(R.id.main_activity_location_spinner);
         creatorButton = findViewById(R.id.main_activity_creator_btn);
         filterButton = findViewById(R.id.main_activity_filter_btn);
-        
+
         userImageView.bringToFront();
 
+        setupListeners();
+    }
+
+    private void setupListeners() {
         buyButton.setOnClickListener(this::toggleButton);
         sellButton.setOnClickListener(this::toggleButton);
         rentButton.setOnClickListener(this::toggleButton);
         creatorButton.setOnClickListener(v -> {
-            startActivity(new Intent(this, SearchActivity.class));
+            startActivity(new Intent(this, FilterActivity.class));
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         });
     }

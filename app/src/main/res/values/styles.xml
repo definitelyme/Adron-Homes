@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -37,15 +37,48 @@
         <item name="cornerSize">50dp</item>
     </style>
 
-    <style name="SearchActivityToolbar" parent="AppTheme.AppBarOverlay">
+    <style name="TransparentToolbar" parent="AppTheme.AppBarOverlay">
         <item name="android:windowActionBarOverlay">true</item>
-        <!-- Support library compatibility -->
         <item name="windowActionBarOverlay">true</item>
     </style>
 
-    <style name="SearchActivityHeader_1" parent="TextAppearance.MaterialComponents.Headline5">
+    <style name="FilterActivityHeader_1" parent="TextAppearance.MaterialComponents.Headline5">
         <item name="android:textSize">21sp</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="FilterActivityText2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">14.6sp</item>
+        <item name="android:justificationMode" tools:ignore="NewApi">inter_word</item>
+    </style>
+
+    <style name="FilterActivityOptionTextView" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="FilterActivityRadioButtonStyle" parent="@style/Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/filter_activity_radio_inset</item>
+        <item name="android:width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/filter_activity_propertytype_bg</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+    </style>
+
+    <style name="FilterActivityChipStyle" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="chipCornerRadius">@dimen/filter_activity_chip_radius</item>
+        <item name="chipBackgroundColor">@color/transparent</item>
+        <item name="rippleColor">@color/lightgrey1</item>
+        <item name="chipStrokeColor">@color/midGrey</item>
+        <item name="chipIconVisible">false</item>
+        <item name="chipStartPadding">12dp</item>
+        <item name="chipEndPadding">12dp</item>
+        <item name="closeIconVisible">false</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="enforceMaterialTheme">false</item>
+        <item name="android:checkable">true</item>
+        <item name="chipStrokeWidth">1dp</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
