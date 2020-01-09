@@ -26,4 +26,5 @@
     <string name="filter_activity_chip_5">5</string>
     <string name="filter_activity_chip_6_plus">6 +</string>
     <string name="filter_activity_textView1_string">I\'m looking for...</string>
+    <string name="filter_result_activity_price_string">Price</string>
 </resources>

@@ -18,7 +18,6 @@ public class FilterResultActivity extends AppCompatActivity {
 
     private void findViews() {
         Toolbar toolbar = findViewById(R.id.filter_result_activity_toolbar);
-//        toolbar.setNavigationIcon(ContextCompat.getDrawable(this, R.drawable.ic_back_black));
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);

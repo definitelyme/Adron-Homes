@@ -61,14 +61,56 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <View
-                    android:id="@+id/filter_activity_divider"
+                    android:id="@+id/filter_result_activity_divider"
                     android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="10dp"
                     android:background="?android:attr/listDivider"
                     app:layout_constraintEnd_toEndOf="@id/filter_result_activity_guideline_end"
                     app:layout_constraintStart_toStartOf="@id/filter_result_activity_guideline_start"
                     app:layout_constraintTop_toBottomOf="@id/filter_result_activity_selected_item_textView" />
+
+                <TextView
+                    android:id="@+id/filter_result_activity_property_type_textView"
+                    style="@style/FilterResultActivitySelectedItemStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/filter_activity_flat_string"
+                    app:layout_constraintStart_toStartOf="@id/filter_result_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/filter_result_activity_divider" />
+
+                <TextView
+                    android:id="@+id/filter_result_activity_price_range_textView"
+                    style="@style/FilterResultActivitySelectedItemStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/filter_result_activity_price_string"
+                    app:layout_constraintStart_toEndOf="@id/filter_result_activity_property_type_textView"
+                    app:layout_constraintTop_toBottomOf="@id/filter_result_activity_divider" />
+
+                <TextView
+                    android:id="@+id/filter_result_activity_no_rooms_textView"
+                    style="@style/FilterResultActivitySelectedItemStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="18dp"
+                    android:text="@string/filter_activity_chip_3"
+                    app:layout_constraintStart_toEndOf="@id/filter_result_activity_price_range_textView"
+                    app:layout_constraintTop_toBottomOf="@id/filter_result_activity_divider" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/filter_result_activity_price_slider"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:thumbElevation="5dp"
+                    app:thumbRadius="8dp"
+                    app:layout_constraintEnd_toEndOf="@id/filter_result_activity_guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/filter_result_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/filter_result_activity_price_range_textView" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

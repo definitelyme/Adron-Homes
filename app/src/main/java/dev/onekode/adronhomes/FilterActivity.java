@@ -59,7 +59,7 @@ public class FilterActivity extends AppCompatActivity {
     }
 
     private void chipActive(@NonNull Chip chip) {
-        chip.setChipBackgroundColor(ContextCompat.getColorStateList(this, R.color.midGrey));
+        chip.setChipBackgroundColor(ContextCompat.getColorStateList(this, R.color.darkGrey));
         chip.setTextColor(ContextCompat.getColor(this, R.color.white));
     }
 
