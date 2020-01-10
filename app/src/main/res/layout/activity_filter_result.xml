@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_begin="66dp" />
+                app:layout_constraintGuide_begin="62dp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -75,6 +75,7 @@
                     style="@style/FilterResultActivitySelectedItemStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
                     android:text="@string/filter_activity_flat_string"
                     app:layout_constraintStart_toStartOf="@id/filter_result_activity_guideline_start"
                     app:layout_constraintTop_toBottomOf="@id/filter_result_activity_divider" />
@@ -85,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="15dp"
                     android:text="@string/filter_result_activity_price_string"
                     app:layout_constraintStart_toEndOf="@id/filter_result_activity_property_type_textView"
                     app:layout_constraintTop_toBottomOf="@id/filter_result_activity_divider" />
@@ -96,21 +97,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
                     android:paddingStart="18dp"
                     android:paddingEnd="18dp"
                     android:text="@string/filter_activity_chip_3"
                     app:layout_constraintStart_toEndOf="@id/filter_result_activity_price_range_textView"
                     app:layout_constraintTop_toBottomOf="@id/filter_result_activity_divider" />
 
-                <com.google.android.material.slider.Slider
-                    android:id="@+id/filter_result_activity_price_slider"
-                    android:layout_width="0dp"
+                <TextView
+                    android:id="@+id/filter_result_activity_count_textView"
+                    style="@style/FilterActivityOptionTextView"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:thumbElevation="5dp"
-                    app:thumbRadius="8dp"
-                    app:layout_constraintEnd_toEndOf="@id/filter_result_activity_guideline_end"
+                    android:layout_marginTop="16dp"
+                    android:text="73 Results Found"
                     app:layout_constraintStart_toStartOf="@id/filter_result_activity_guideline_start"
                     app:layout_constraintTop_toBottomOf="@id/filter_result_activity_price_range_textView" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/filter_result_activity_recyclerView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    app:layout_constraintEnd_toEndOf="@id/filter_result_activity_guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/filter_result_activity_guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/filter_result_activity_count_textView"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/recyclerview_filter_result_activity" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

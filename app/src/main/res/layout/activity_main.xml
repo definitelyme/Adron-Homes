@@ -14,19 +14,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!--            <androidx.cardview.widget.CardView-->
-            <!--                app:cardCornerRadius="50dp"-->
-            <!--                app:cardElevation="12dp">-->
-
-            <!--                <ImageView-->
-            <!--                    android:id="@+id/main_activity_user_imageView"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="match_parent"-->
-            <!--                    android:contentDescription="@string/app_name"-->
-            <!--                    android:scaleType="centerCrop"-->
-            <!--                    android:src="@drawable/square" />-->
-            <!--            </androidx.cardview.widget.CardView>-->
-
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/main_activity_user_imageView"
                 android:layout_width="40dp"
@@ -38,17 +25,19 @@
                 android:src="@drawable/round"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:riv_border_color="@color/colorPrimary"
+                app:riv_border_width="1dp"
                 app:riv_corner_radius="200dp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="440dp"
+                android:layout_height="0dp"
                 android:background="@drawable/estate"
                 android:backgroundTint="@color/activity_main_tint"
                 android:backgroundTintMode="src_over"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_default="percent"
-                app:layout_constraintHeight_percent=".6"
+                app:layout_constraintHeight_percent=".65"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,6 +47,49 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_begin="355dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/main_activity_topText_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toTopOf="@id/guideline1"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/topText_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/activity_start_guide" />
+
+                <TextView
+                    android:id="@+id/main_activity_topText_1"
+                    style="@style/MainActivityTopText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ready to \nmove?"
+                    app:layout_constraintBottom_toTopOf="@id/main_activity_topText_2"
+                    app:layout_constraintStart_toStartOf="@id/topText_guideline" />
+
+                <TextView
+                    android:id="@+id/main_activity_topText_2"
+                    style="@style/MainActivityTopText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Find your dream home."
+                    app:layout_constraintBottom_toTopOf="@id/main_activity_topText_3"
+                    app:layout_constraintStart_toStartOf="@id/topText_guideline" />
+
+                <TextView
+                    android:id="@+id/main_activity_topText_3"
+                    style="@style/MainActivityTopText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="The most accurate home search."
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/topText_guideline" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

@@ -22,9 +22,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:navigationIcon="@drawable/ic_back_white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/ic_back_white"
                 app:theme="@style/TransparentToolbar" />
 
             <androidx.constraintlayout.widget.Guideline
@@ -252,19 +252,47 @@
                             style="@style/FilterActivityChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/filter_activity_chip_6_plus" />
+                            android:text="@string/filter_activity_chip_5_plus" />
                     </com.google.android.material.chip.ChipGroup>
                 </HorizontalScrollView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/filter_activity__rooms_inputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/filter_activity_rooms_textView"
+                    app:errorEnabled="true"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    app:layout_constraintEnd_toEndOf="@id/filter_activity_guideline_end"
+                    app:layout_constraintTop_toBottomOf="@id/filter_activity_chip_scrollView">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/filter_activity__rooms_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/filter_activity__roomsGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="filter_activity__rooms_inputLayout" />
 
                 <TextView
                     android:id="@+id/filter_activity__price_textView"
                     style="@style/FilterActivityOptionTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:text="@string/filter_activity_price_range_textView"
                     app:layout_constraintStart_toStartOf="@id/filter_activity_guideline_start"
-                    app:layout_constraintTop_toBottomOf="@id/filter_activity_chip_scrollView"
+                    app:layout_constraintTop_toBottomOf="@id/filter_activity__rooms_inputLayout"
                     tools:layout_editor_absoluteY="289dp" />
 
                 <com.google.android.material.textfield.TextInputLayout

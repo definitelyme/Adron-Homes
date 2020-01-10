@@ -32,6 +32,18 @@
         <item name="android:textStyle">normal</item>
     </style>
 
+    <style name="MainActivityTopText1" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearanceLarge">@style/TextAppearance.AppCompat.Large</item>
+    </style>
+
+    <style name="MainActivityTopText" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <style name="ShapeAppearance.MyApp.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50dp</item>
@@ -82,13 +94,19 @@
     </style>
 
     <style name="FilterResultActivitySelectedItemStyle" parent="TextAppearance.MaterialComponents.Headline6">
-        <item name="android:background">@drawable/filter_result_activity_selected_items_bg</item>
-        <item name="android:paddingTop">16dp</item>
-        <item name="android:paddingEnd">30dp</item>
-        <item name="android:paddingBottom">16dp</item>
+        <item name="android:background">@drawable/filter_result_activity_selected_items_selector
+        </item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingEnd">25dp</item>
+        <item name="android:paddingBottom">10dp</item>
         <item name="android:layout_marginTop">10dp</item>
-        <item name="android:paddingStart">30dp</item>
+        <item name="android:paddingStart">25dp</item>
         <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="RecyclerViewPropertyNameStyle" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
