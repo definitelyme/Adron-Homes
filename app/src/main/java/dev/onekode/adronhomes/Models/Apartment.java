@@ -15,6 +15,7 @@ public class Apartment extends Model implements Parcelable {
             return new Apartment[size];
         }
     };
+
     private String id;
     private String name;
     private String propertyType;

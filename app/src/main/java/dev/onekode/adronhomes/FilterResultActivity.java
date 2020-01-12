@@ -16,6 +16,7 @@ import dev.onekode.adronhomes.Observers.ApartmentViewModel;
 public class FilterResultActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ApartmentAdapter adapter;
+    private String rooms, propType;
 
     // Views
     private TextView propTypeTextView, priceRangeTextView, roomsTextView;
@@ -26,9 +27,13 @@ public class FilterResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter_result);
 
+        rooms = getIntent().getStringExtra("rooms");
+        propType = getIntent().getStringExtra("propType");
+
         findViews();
         setupListeners();
         adapter = new ApartmentAdapter();
+        putExtras();
     }
 
     private void findViews() {
@@ -64,5 +69,10 @@ public class FilterResultActivity extends AppCompatActivity {
         // If you still don't get it, ask & i'll explain better
         aView.setSelected(!aView.isSelected());
         previousSelectedView = aView;
+    }
+
+    private void putExtras() {
+        propTypeTextView.setText(propType != null && !propType.equals("") ? propType : getString(R.string.filter_activity_flat_string));
+        roomsTextView.setText(rooms != null && !propType.equals("") ? rooms : getString(R.string.filter_activity_chip_3));
     }
 }

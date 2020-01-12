@@ -3,6 +3,7 @@ package dev.onekode.adronhomes;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioGroup;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,13 +14,16 @@ import androidx.core.content.ContextCompat;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.android.material.radiobutton.MaterialRadioButton;
 
 public class FilterActivity extends AppCompatActivity implements RootInterface {
     // Dynamic Props
     private String rooms;
+    private String propertyType;
     // Views
     private ChipGroup chipGroup;
     private MaterialButton continueFilterBtn;
+    private RadioGroup propertyRadioGroup;
     private View previousCheckedChip;
     private Group roomsGroup;
 
@@ -42,6 +46,7 @@ public class FilterActivity extends AppCompatActivity implements RootInterface {
         chipGroup = findViewById(R.id.filter_activity_chip_group);
         continueFilterBtn = findViewById(R.id.filter_activity_continue_btn);
         roomsGroup = findViewById(R.id.filter_activity__roomsGroup);
+        propertyRadioGroup = findViewById(R.id.filter_activity_radio_group);
     }
 
     private void setupListeners() {
@@ -57,8 +62,16 @@ public class FilterActivity extends AppCompatActivity implements RootInterface {
             }
         });
 
+        propertyRadioGroup.setOnCheckedChangeListener((radioGroup, i) -> {
+            MaterialRadioButton radioButton = findViewById(i);
+            propertyType = radioButton.getText().toString();
+        });
+
         continueFilterBtn.setOnClickListener(v -> {
-            startActivity(new Intent(this, FilterResultActivity.class));
+            Intent intent = new Intent(this, FilterResultActivity.class);
+            intent.putExtra("rooms", rooms);
+            intent.putExtra("propType", propertyType);
+            startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         });
     }

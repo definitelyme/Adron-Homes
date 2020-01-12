@@ -15,6 +15,7 @@ public class Rooms extends Model implements Parcelable {
             return new Rooms[size];
         }
     };
+
     private String id;
     private String lobbies;
     private String bedrooms;

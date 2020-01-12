@@ -2,24 +2,27 @@ package dev.onekode.adronhomes;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.button.MaterialButton;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.makeramen.roundedimageview.RoundedImageView;
 
-import dev.onekode.adronhomes.Models.Apartment;
-import dev.onekode.adronhomes.Models.Rooms;
+import java.util.ArrayList;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements RootInterface {
+    private ArrayAdapter<String> spinnerAdapter;
+    private String tenureType;
+    private String location;
+
+    // Views
     private RoundedImageView userImageView;
     private ConstraintLayout buyButton;
     private ConstraintLayout sellButton;
@@ -38,10 +41,11 @@ public class MainActivity extends AppCompatActivity implements RootInterface {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         );
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
         findViews();
         setupListeners();
-//        generateFakeData();
+        generateFakeData();
     }
 
     private void findViews() {
@@ -59,8 +63,25 @@ public class MainActivity extends AppCompatActivity implements RootInterface {
         buyButton.setOnClickListener(this::toggleButton);
         sellButton.setOnClickListener(this::toggleButton);
         rentButton.setOnClickListener(this::toggleButton);
+
+        FirebaseFirestore.getInstance().collection("settings").document("locations")
+                .addSnapshotListener((documentSnapshot, e) -> {
+                    ArrayList<String> locations = new ArrayList<>();
+                    if (documentSnapshot != null && documentSnapshot.exists()) {
+                        for (Map.Entry<String, Object> entry : documentSnapshot.getData().entrySet()) {
+                            locations.add((String) entry.getValue());
+                        }
+                    }
+                    spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, locations);
+                    locationSpinner.setAdapter(spinnerAdapter);
+                });
+
+        locationSpinner.setOnItemClickListener((adapterView, view, i, l) -> location = adapterView.getItemAtPosition(i).toString());
+
         creatorButton.setOnClickListener(v -> {
-            startActivity(new Intent(this, FilterActivity.class));
+            Intent intent = new Intent(this, FilterActivity.class);
+            intent.putExtra("location", location);
+            startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         });
     }
@@ -76,45 +97,7 @@ public class MainActivity extends AppCompatActivity implements RootInterface {
     }
 
     private void generateFakeData() {
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
-
-        TENURE_TYPE[] cats = {TENURE_TYPE.SALE, TENURE_TYPE.LEASE, TENURE_TYPE.RENT};
-        String[] names = {"Adiba Suites", "Concord Lounge", "Little Africa", "Lekki Gardens", "Rose Gardens", "Ajebo Estate", "Amen Villa"};
-        String[] locations = {"Ikoyi Lagos", "Gariki Abuja", "Idumota, Lagos", "Lekki, Lagos", "Ikeja, Lagos", "Owerri, Imo", "Woolwich, London"};
-        int total = 7;
-
-        Log.i(TAG, "generateFakeData: Generating Data..........");
-
-        for (int i = 0; i < total; i++) {
-            DocumentReference documentReference = database.collection("apartments").document();
-
-            Rooms rooms = new Rooms.Builder()
-                    .setId(String.valueOf(Math.round(Math.random() * 1024)))
-                    .setBathrooms(String.valueOf((int) (Math.floor(Math.random() * 5) + 1)))
-                    .setBedrooms(String.valueOf((int) (Math.floor(Math.random() * 5) + 1)))
-                    .setKitchens(String.valueOf((int) (Math.floor(Math.random() * 5) + 1)))
-                    .setLobbies(String.valueOf((int) (Math.floor(Math.random() * 5) + 1)))
-                    .setParking_rooms("3")
-                    .build();
-            Apartment apartment = new Apartment.Builder()
-                    .setId(documentReference.getId())
-                    .setName(names[(int) (Math.floor(Math.random() * total - 1) + 1)])
-                    .setPropertyType(PROPERTY_TYPE.HOUSE.toString())
-                    .setTenureType(cats[(int) (Math.floor(Math.random() * 2) + 1)]
-                            .toString())
-                    .setRooms(rooms)
-                    .setPrice(String.valueOf((int) (Math.random() * 1000000)))
-                    .setLocation(locations[(int) (Math.floor(Math.random() * total - 1) + 1)])
-                    .setRating(4.4)
-                    .setDescription("Here's an unbeatable opportunity to get into the market at a stunning price. As you walk into this 2011 home, you will see all the original characters such as Epoxy coated Concrete floors (Radiant in-floor heat).")
-                    .build();
-            documentReference.set(apartment)
-                    .addOnSuccessListener(aVoid -> {
-                        Toast.makeText(this, "Document added!", Toast.LENGTH_SHORT).show();
-                    })
-                    .addOnFailureListener(this, e -> {
-                        Toast.makeText(this, "Oops! => " + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                    });
-        }
+//        Faker.makeFakeApartments(12);
+//        Faker.fakeLocations();
     }
 }

@@ -15,12 +15,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.database.annotations.NotNull;
 
 public interface RootInterface {
+    String SHARED_PREF_FILE = "sharedPrefs";
+    String USER_EMAIL_PERMISSION = "email";
+    String USER_PROFILE_PERMISSION = "public_profile";
+    String USER_BIRTHDAY_PERMISSION = "user_birthday";
+    String USER_FRIENDS_PERMISSION = "user_friends";
+    String AUTH_BUG_RESPONSE = "An authentication error occurred! The Admin has been notified!";
     String TAG = "log-tag";
+    String TOS = "https://nerdslot.org/terms"; // Terms of Service URL
+    String PP = "https://nerdslot.org/policy"; // Terms of Service URL
+    int JOB_ID = 100;
+    int SELECT_FILE_REQUEST_CODE = 110;
 
-    String MAINTENANCE_TEXT = "Whoops! This is a demo version.";
+    String MAINTENANCE_TEXT = "Whoops! It's a demo version.";
 
     default void sendToast(Activity context, String msg) {
         Toast.makeText(context, msg != null && !TextUtils.isEmpty(msg) ? msg : "No Message", Toast.LENGTH_LONG).show();
@@ -76,22 +85,22 @@ public interface RootInterface {
             Log.i(TAG, "sendResponse: " + msg, ex);
     }
 
-    default void setEnabled(@NotNull View v, boolean enabled) {
+    default void setEnabled(@NonNull View v, boolean enabled) {
         v.setEnabled(enabled);
     }
 
-    default void setEnabled(boolean enabled, @NotNull View... views) {
+    default void setEnabled(boolean enabled, @NonNull View... views) {
         for (View v : views) {
             v.setEnabled(enabled);
         }
     }
 
-    default void setVisibility(@NotNull View v, boolean visible) {
+    default void setVisibility(@NonNull View v, boolean visible) {
         int visibility = visible ? View.VISIBLE : View.GONE; // If "visible = true", visibility = VISIBLE, else = GONE
         v.setVisibility(visibility);
     }
 
-    default void setVisibility(boolean visible, @NotNull View... views) {
+    default void setVisibility(boolean visible, @NonNull View... views) {
         int visibility = visible ? View.VISIBLE : View.GONE;
         for (View v : views) {
             v.setVisibility(visibility);
@@ -150,6 +159,29 @@ public interface RootInterface {
         @Override
         public String toString() {
             return name;
+        }
+
+        public int getOrdinal() {
+            return ordinal;
+        }
+    }
+
+    enum GENDER {
+        MALE("male", 0),
+        FEMALE("female", 1);
+
+        private String type;
+        private int ordinal;
+
+        GENDER(String type, int ordinal) {
+            this.type = type;
+            this.ordinal = ordinal;
+        }
+
+        @NonNull
+        @Override
+        public String toString() {
+            return type;
         }
 
         public int getOrdinal() {

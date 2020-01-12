@@ -1,10 +1,14 @@
-<resources>
+<resources xmlns:ns2="urn:oasis:names:tc:xliff:document:1.2">
+    <!--  App Strings  -->
+    <string name="no_internet_connection" translation_descripition="User message shown when server interaction is attempted while offline.">Network error, check your internet connection.</string>
+    <string name="property_content_description">Property Image View</string>
+
     <string name="app_name">Adron Homes</string>
     <string name="main_activity_rent_string">RENT</string>
     <string name="main_activity_buy_string">BUY</string>
     <string name="main_activity_sell_string">SELL</string>
     <string name="main_activity_string_1">I want to</string>
-    <string name="main_activity_location_hint">Lagos, Nigeria</string>
+    <string name="main_activity_location_hint">Pick a location</string>
     <string name="main_activity_where_string">Where?</string>
     <string name="main_activity_creator_string">Go to Creator</string>
     <string name="main_activity_options_string">more filter options</string>
@@ -25,7 +29,26 @@
     <string name="filter_activity_chip_4">4</string>
     <string name="filter_activity_chip_5">5</string>
     <string name="filter_activity_chip_5_plus">5 +</string>
-    <string name="filter_activity_textView1_string">I\'m looking for...</string>
+    <string name="filter_activity_textView1_string">I\'m looking for…</string>
     <string name="filter_result_activity_price_string">Price</string>
-    <string name="property_content_description">Property Image View</string>
+    <string name="auth_activity_browse_string">Browse</string>
+    <string name="auth_activity_divider_string">or</string>
+    <string name="auth_activity_tos_string">Terms of Use</string>
+    <string name="auth_activity_verification_email_string">Verification email sent. Check your email to complete sign-in.</string>
+    <string name="sign_in_string">Sign in</string>
+    <string name="sign_in_with_email_string">Sign in with email</string>
+    <string name="sign_in_with_google_string">Sign in with Google</string>
+    <string name="sign_in_with_facebook_string">Sign in with Facebook</string>
+    <string name="fui_progress_dialog_signing_up">Creating your shiny new account…</string>
+    <string name="fui_button_text_save" formatted="true">Sign Up</string>
+    <string name="fui_error_email_does_not_exist">Invalid credentials. User account not found!</string>
+    <string name="fui_tos_and_pp">By continuing, you are indicating that you accept our <ns2:g example="https://google.com/terms" id="tos" translation_description="Terms of service text">%1$s</ns2:g>.</string>
+
+    <!--Facebook Activity Strings-->
+    <string name="facebook_application_id" translatable="false">400002810648619</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb400002810648619</string>
+    <!---->
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">918228727b00702604f27530c143a664</string>
+    <string name="ACCOUNT_KIT_APP_SECRET">cea59aee21a5a86c7b8b90f035bfe187</string>
+    <string name="auth_activity_verification_email_not_sent_string">Hey there! You\'re using an Anonymous account.</string>
 </resources>
